@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Dia dos Namorados</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos da Linha do Tempo (Preto e Vermelho Escuro) */
+    .timeline-wrapper {
+      margin-top: 60px;
+      padding: 20px;
+      font-family: sans-serif;
+      border-top: 1px solid #eee; /* Divisória sutil */
+    }
+
+    .timeline-title {
+      color: #8B0000; /* Vermelho Escuro */
+      text-align: center;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .timeline-container {
+      position: relative;
+      max-width: 300px;
+      margin: 0 auto;
+      border-left: 1.5px solid #000; /* Linha Preta */
+      padding-left: 25px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 35px;
+      text-align: left;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      background-color: #8B0000; /* Detalhe Vermelho Escuro */
+      border-radius: 50%;
+    }
+
+    .timeline-date {
+      display: block;
+      font-weight: bold;
+      color: #000;
+      font-size: 0.85rem;
+      margin-bottom: 3px;
+    }
+
+    .timeline-text {
+      color: #444;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="icon icon-cartas-topo">
+    <svg viewBox="0 0 100 80">
+      <rect x="5" y="15" width="50" height="35" rx="2" transform="rotate(-15 30 32)" />
+      <path d="M10 20 L30 35 L50 18" transform="rotate(-15 30 32)" />
+      <rect x="25" y="10" width="50" height="35" rx="2" transform="rotate(5 50 27)" />
+      <path d="M25 15 L50 30 L75 12" transform="rotate(5 50 27)" />
+      <path d="M55 25 Q 60 20, 65 25 T 75 25" stroke-width="1" /> </svg>
+  </div>
+
+  <header>
+    <h1 class="title">FELIZ DIA <br> DOS NAMORADOS</h1>
+    <div class="btn-wrapper">
+      <a href="pag2.html" style="text-decoration: none;">
+        <button class="btn-clique" id="btnSurpresa">CLIQUE AQUI</button>
+      </a>
+    </div>
+  </header>
+
+  <main class="scrapbook">
+    <div class="icon icon-flores">
+      <svg viewBox="0 0 60 100">
+        <path d="M30 90 Q30 60 30 40" />
+        <path d="M30 50 L15 30 M30 50 L45 30 M30 50 L30 25" />
+        <circle cx="15" cy="30" r="4" />
+        <circle cx="45" cy="30" r="4" />
+        <circle cx="30" cy="25" r="4" />
+        <path d="M20 70 Q30 65 40 70" /> </svg>
+    </div>
+
+    <div class="polaroid p1">
+      <img src="imgs/WhatsApp Image 2026-02-02 at 21.39.53 (4).jpeg"/>
+    </div>
+
+    <div class="polaroid p2">
+      <img src="imgs/WhatsApp Image 2026-02-02 at 21.39.53.jpeg" />
+    </div>
+
+    <div class="polaroid p3">
+      <img src="imgs/WhatsApp Image 2026-02-02 at 21.39.53 (1).jpeg"/>
+      <div class="caption-tag">forever & always</div>
+    </div>
+  </main>
+
+  <section class="timeline-wrapper">
+    <h2 class="timeline-title">nos historia</h2>
+
+    <div class="timeline-container">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">16.12.2023</span>
+        <p class="timeline-text">quando nu da nos primero beijo, na noite branca</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">27.12.2023</span>
+        <p class="timeline-text">quando bu pidim em namoro pa primero bes</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">27.01.2024</span>
+        <p class="timeline-text">quando nu fazi 1 mês k nu sai pa janta fora, dps nu fica na kebra ta oia mar</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">algum dia de junho (hihi)</span>
+        <p class="timeline-text">quando nu torna volta</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">30.09.2025</span>
+        <p class="timeline-text">quando nba atxou na canarias e nu tevi midjor semana</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-date">21.12.2025</span>
+        <p class="timeline-text">quando bu bem atxam na portugal e nu passa pa primero bes natal e ano novo djuntu</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

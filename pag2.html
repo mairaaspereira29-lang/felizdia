@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Carta Para Você</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #4a0404;
+            --envelope-color: #8b1414;
+            --paper-color: #fdf5e6;
+            --accent-color: #ffcccc;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Botão Voltar */
+        .btn-voltar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            border: 1px solid var(--accent-color);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .btn-voltar:hover { background: rgba(255,204,204,0.1); }
+
+        /* Container do Envelope */
+        .wrapper {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .wrapper:hover { transform: scale(1.05); }
+
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background: var(--envelope-color);
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        /* Aba do envelope */
+        .envelope::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 110px solid #a51a1a;
+            transform-origin: top;
+            transition: transform 0.5s 0.3s;
+        }
+
+        /* Papel dentro do envelope */
+        .letter {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 280px;
+            height: 180px;
+            background: var(--paper-color);
+            transition: transform 0.5s;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #4a0404;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .letter h2 { font-family: 'Dancing Script', cursive; margin: 0; }
+        .letter p { font-size: 0.8rem; margin-top: 10px; font-weight: 600; color: #8b1414; }
+
+        /* --- ESTADO ABERTO --- */
+        .wrapper.open .envelope::before {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+
+        .wrapper.open .letter {
+            transform: translateY(-120px);
+            z-index: 2;
+        }
+
+        /* --- CARTA EXPANDIDA (TELA CHEIA) --- */
+        #fullContent {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: var(--paper-color);
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            z-index: 100;
+            padding: 60px 25px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            color: #2c1e14;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .full-letter-body {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            white-space: pre-wrap;
+        }
+
+        .close-btn {
+            position: fixed;
+            top: 20px; right: 30px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--envelope-color);
+        }
+
+        .heart { color: var(--envelope-color); font-size: 1.5rem; margin-top: 30px; text-align: center;}
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="btn-voltar">← Voltar</a>
+
+<div class="wrapper" id="envelopeWrapper" onclick="abrirEnvelope()">
+    <div class="letter">
+        <h2>pa bo</h2>
+        <p>clica pa abri</p>
+    </div>
+    <div class="envelope"></div>
+</div>
+
+<div id="fullContent">
+    <span class="close-btn" onclick="fecharCarta()">×</span>
+    <div class="full-letter-body">
+        <h1 style="font-family: 'theodonory'; color: #8b1414; text-align: center;">baby,</h1>
+
+
+        Bu ta lembra a dias k bu perguntam pamo kin scodji abo e pamo kin ta amou?
+        Nka flou pamo sempre k ta fz kes perguntas la nta fica nervosa, não pamo nka sabi ma pamo nka ta sabi mo kin ta flou el em voz alta e n sb ma kz k mas bu kre eh pan ta flou el sem medo, ma enquanto nka ta consigui flou nta consigui skreveu e se for preciso  nta skrevi ti kin consigui fla.
+        Nta ama manera oras k nu ta ri e bta fica ta djobem, bu ta ri inda mas, nta ama forma k bu ta tratam, quão delicado bu eh k mi e nta ama manera k ta pum xinti especial.
+        Nta amou pamo memo dps d td kz k nu passa e kin pou passa bu continua ta oiam e ta tratam de mesmo forma, nta ama pamo bu da nos relacionamento um segundo chance pm bu acredita na nos, nta ama manera k ta fala sobre tem futuro k mi.
+        Nta ama manera k oras kin ka sa confiante k um kz bu ta flam logo man ta consigui, nta ama manera k ta acredita na mi, nta ama quão parcero bu eh k mi oras kin mesteu.
+        Nta ama quão bondoso bu eh, o quanto bu ta preocupa k alguém, e bu ta fz d td pa td alguém xinti drt, e nta ama k qualquer alguém k conxeu ta fla ma bo eh dretu, ta ama manera k nhas pais gosta dbo, e manera ku ka teve medo d mostras e nem de flas mo ta bai aman e cuida d mi smp.
+        Nta ama nos relacionamento, nta ama manera k nu torna volta e quão forte gss nu sta, n ta ama o facto de nos dos nu viaja pa pais de cumpanhero ku gana d sta djuntu, nta ama k nos relacionamento ta pui otus alguém ku gana tem pamo kela significa que nos relacionamento eh odjadu k bom odju e es ta oia kz k nos dos nu xinti.
+        Nta ama o quão avontade nu eh k cumpanhero, quão abertamente nu ta fala de tudo, quão bem nu conxi cumpanhero e nta ama o quanto nu foi fetu pa cumpanheu.Quanto mas tempo passa nta percebi ma nkre fica kbo pa sempre, tem td kz k nu imagina e um poku mas.
+
+        Ta amou meu bem,
+        Nha coraçon eh dbo
+        hoje,manha e pa sempre.
+
+
+
+        <div class="heart">❦</div>
+    </div>
+</div>
+
+<script>
+    function abrirEnvelope() {
+        const wrapper = document.getElementById('envelopeWrapper');
+        wrapper.classList.add('open');
+
+        // Espera a animação do envelope e abre a carta em tela cheia
+        setTimeout(() => {
+            document.getElementById('fullContent').style.display = 'block';
+        }, 1000);
+    }
+
+    function fecharCarta() {
+        document.getElementById('fullContent').style.display = 'none';
+        document.getElementById('envelopeWrapper').classList.remove('open');
+    }
+</script>
+
+</body>
+</html>
